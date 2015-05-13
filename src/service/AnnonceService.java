@@ -5,6 +5,7 @@
  */
 package service;
 
+import bean.Compte;
 import dao.AnnonceDao;
 
 /**
@@ -13,5 +14,17 @@ import dao.AnnonceDao;
  */
 public class AnnonceService {
     private AnnonceDao annonceDao = new AnnonceDao();
-    //public List<Annonce> 
+
+    public AnnonceDao getAnnonceDao() {
+        return annonceDao;
+    }
+
+    public void setAnnonceDao(AnnonceDao annonceDao) {
+        this.annonceDao = annonceDao;
+    }
+    public void findByCompte(Compte compte){
+        String hql="from Annonce  a WHERE a.compte.id=Compte.id";
+        
+        System.out.println(""+annonceDao.load(hql).get(0).getTitre());
+    }
 }

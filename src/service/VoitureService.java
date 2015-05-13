@@ -5,6 +5,7 @@
  */
 package service;
 
+import bean.Voiture;
 import dao.VoitureDao;
 
 /**
@@ -13,4 +14,14 @@ import dao.VoitureDao;
  */
 public class VoitureService {
     private VoitureDao voitureDao = new VoitureDao();
+
+    public VoitureDao getVoitureDao() {
+        return voitureDao;
+    }
+    public static void main(String[] args) {
+    }
+    public void setVoitureDao(VoitureDao voitureDao) {
+        this.voitureDao = voitureDao;
+    }
+    
 }

@@ -5,6 +5,8 @@
  */
 package service;
 
+import bean.Annonceur;
+import bean.Compte;
 import dao.AnnonceurDao;
 
 /**

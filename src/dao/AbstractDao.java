@@ -49,9 +49,13 @@ public class AbstractDao<T> {
         session.get(entityClass.getClass(), (Serializable) id);
     }
 
-    public List<T> findAll(Object id) {
+    public List<T> findAll() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         return session.createQuery("from " + entityClass.getSimpleName()).list();
+    }
+     public List<T> load(String hql) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        return session.createQuery(hql).list();
     }
 
 }
